@@ -6,64 +6,69 @@
     android:layout_margin="25dp"
     android:scrollbars="vertical"
     >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <TextView
-            android:id="@+id/name"
+    <ViewFlipper
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card"
+        android:background="@color/white">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_margin="@dimen/default_margin"
-            android:text="@string/name"
-            android:textColor="?android:textColorSecondary" />
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/name">
+            android:layout_height="match_parent"
+            >
 
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/default_margin"
+                android:text="@string/name"
+                android:textColor="?android:textColorSecondary" />
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_margin"
-                android:text="@string/price" />
+                android:layout_below="@+id/name">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin"
+                    android:text="@string/price" />
+
+                <TextView
+                    android:id="@+id/event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin"
+                    android:text="@string/event" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/event"
+                android:id="@+id/diff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_margin"
-                android:text="@string/event" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="46dp"
+                android:padding="8dp"
+                android:text="1" />
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/sendOrder"
+                android:layout_width="164dp"
+                android:layout_height="68dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="17dp"
+                android:text="@string/jelentkez" />
 
-        <TextView
-            android:id="@+id/diff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="46dp"
-            android:padding="8dp"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/sendOrder"
-            android:layout_width="164dp"
-            android:layout_height="68dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="17dp"
-            android:layout_marginBottom="17dp"
-            android:text="@string/jelentkez" />
-
-    </RelativeLayout>
+        </RelativeLayout>
+    </ViewFlipper>
 
 </androidx.cardview.widget.CardView>

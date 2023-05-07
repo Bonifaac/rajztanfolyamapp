@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shop">
-        <activity android:name="com.example.rajztanfolyam.TanfolyamListActivity"></activity>
-        <activity android:name="com.example.rajztanfolyam.RegisterActivity" />
-        <activity android:name="com.example.rajztanfolyam.MainActivity"
+        <activity
+            android:name=".test"
+            android:exported="false" />
+        <activity android:name=".TanfolyamListActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

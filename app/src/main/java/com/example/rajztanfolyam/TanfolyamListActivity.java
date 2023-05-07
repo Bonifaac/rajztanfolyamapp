@@ -1,6 +1,7 @@
 package com.example.rajztanfolyam;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,9 +11,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +29,7 @@ import java.util.ArrayList;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static com.example.rajztanfolyam.R.anim.shake;
 
 public class TanfolyamListActivity extends AppCompatActivity {
     private static final String LOG_TAG = TanfolyamListActivity.class.getName();
@@ -161,6 +167,12 @@ public class TanfolyamListActivity extends AppCompatActivity {
     public void subcribeTanfolyam() {
 
         String msg = "Sikeresen feliratkoztál a tanfolyamra!";
+        ViewFlipper mFlipper = (ViewFlipper) findViewById(R.id.card);
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide);
+
+        mFlipper.setAnimation(animation);
+        mFlipper.showNext();
 
         mHandler.sendNotification(msg);
 
